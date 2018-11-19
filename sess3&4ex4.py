@@ -1,3 +1,4 @@
+
 print("Welcome to the universal pocket calculator.")
 print("1. Type <+> if you want to compute a sum."
       "\n2. Type <-> if you want to compute a rest."
@@ -11,7 +12,6 @@ while True:
     if answer == "+":
         while True:
             try:
-
                     num = input('Introduce the first number: ')
                     num2 = input('Introduce the second number: ')
                     num = float(num)
