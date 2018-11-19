@@ -28,7 +28,6 @@ lives = int(3)
 secret = ["S", "S", "N", "W", "E", "S"]
 quit = 0
 movement = []
-print(secret[number])
 while True:
     if lives > 0:
         while True:

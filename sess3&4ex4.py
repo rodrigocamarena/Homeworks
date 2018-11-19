@@ -1,4 +1,3 @@
-
 print("Welcome to the universal pocket calculator.")
 print("1. Type <+> if you want to compute a sum."
       "\n2. Type <-> if you want to compute a rest."
