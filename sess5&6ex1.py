@@ -28,7 +28,7 @@ lives = int(3)
 secret = ["S", "S", "N", "W", "E", "S"]
 quit = 0
 movement = []
-while True:
+while not quit == 1:
     if lives > 0:
         while True:
             print("\nYou are finding the ", (counter+1), "secret word.\n")
@@ -46,6 +46,7 @@ while True:
                       '\n7. L [List of tokens].'
                       '\n8. S [Display status]'
                       '\n9. Q [Exit as a desertor].')
+                del movement[counter]
                 continue
             elif movement[counter] == "I":
                 print("\n¡Welcome!\n\n"
@@ -60,13 +61,14 @@ while True:
                       "\n   This breaks the chain an we must start again from the first valid move."
                       "\n   Last but no least, you only have 3 lives, and you will loose 1 live after 10 moves."
                       "\n\nGood luck traveler! ")
+                del movement[counter]
                 continue
             elif movement[counter] == "R":
+                del movement[counter]
                 lives = 3
                 number = 1
                 attempt = 1
                 counter = 1
-                continue
             elif movement[counter] == "S" or movement[counter] == "W" or movement[counter] == "E" or movement[counter] == "N":
                 if number > 10:
                     print("We are so sorry, but you have lost a life. :(.")
@@ -100,27 +102,26 @@ while True:
                     number = number + 1
                     counter = 0
                     movement[:] = []
-                    continue
 
             elif movement[counter] == "D":
                 print("         Displaying your status")
                 print("Number of lives: ", lives)
                 print("Number of movements: ", counter)
-                continue
+                del movement[counter]
 
-            elif movement[counter] == "Q" or "q":
+            elif movement[counter] == "Q":
                 quit = 1
                 break
             else:
-                print("opps, invalid movement. Try again.")
-                continue
+                print('opps, invalid movement. Try again.')
+                del movement[counter]
     else:
         print("Game Over.")
         print("Restarting the game...")
+
         lives = 3
         number = 0
         attempt = 0
+        counter = 0
+        movement[:] = []
         continue
-
-    if quit == 1:
-        break
