@@ -75,7 +75,7 @@ while not quit == 1:
                     lives = lives - 1
                     number = 1
                     print("\nBut don´t worry you still have: ", lives)
-                    continue
+                    pass
                 if movement[counter] == secret[counter]:
                     if counter == 5:
                         print("Congrats! You successfully scaped from the magic maze!")
