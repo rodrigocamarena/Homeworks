@@ -68,7 +68,14 @@ while not quit == 1:
                 lives = 3
                 number = 1
                 attempt = 1
-                counter = 1
+                counter = 0
+                movement[:] = []
+                print("Restarting the system...")
+                print("\nEstablishing lives to 3...")
+                print("\nProcess successfully done")
+
+                continue
+
             elif movement[counter] == "S" or movement[counter] == "W" or movement[counter] == "E" or movement[counter] == "N":
                 if number > 10:
                     print("We are so sorry, but you have lost a life. :(.")
@@ -106,8 +113,9 @@ while not quit == 1:
             elif movement[counter] == "D":
                 print("         Displaying your status")
                 print("Number of lives: ", lives)
-                print("Number of movements: ", counter)
+                print("Number of movements: ", attempt)
                 del movement[counter]
+                continue
 
             elif movement[counter] == "Q":
                 quit = 1
