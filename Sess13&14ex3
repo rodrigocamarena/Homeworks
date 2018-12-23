@@ -1,0 +1,23 @@
+print('Welcome to the list divisor number. ')
+
+
+def list_creator(prompt):
+        list = []
+        for i in range(1, prompt+1):
+            result = prompt%i
+            if result == 0:
+                list.append(i)
+        print(list)
+
+flag = True
+while flag:
+
+        prompt = input('Introduce the integer you want to find its list divisor: ')
+        prompt2 = int(prompt)
+        result = prompt - prompt2
+        if result == 0:
+            list_creator(prompt)
+        else:
+            print('Error, try again.')
+
+
